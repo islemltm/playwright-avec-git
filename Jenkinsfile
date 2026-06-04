@@ -44,16 +44,7 @@ pipeline{
                     }
                     
                 }
-                build job:'JenkinsGitJob',
-                    parameters: [
-                        booleanParam(name: 'checkBrowser', value:true),
-
-                        choice(name: 'Browser', value: 'webkit'),
-
-                        booleanParam(name: 'Checktags', value: true),
-
-                        choice(name: 'tags', value: '@regression')
-                    ]
+                build job:'JenkinsGitJob'
             }
         }
     }
