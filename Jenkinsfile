@@ -36,10 +36,10 @@ pipeline{
                     }
                     else{
                         if(params.Checktags){
-                        echo('npx playwright test --grep '+params.tags+' --project='+params.Browser)
+                        echo('npx playwright test --grep '+params.tags+' --project '+params.Browser)
                         }
                         else{
-                            echo('npx playwright test --project ='+params.Browser)
+                            echo('npx playwright test --project '+params.Browser)
                         }
                     }
                     
