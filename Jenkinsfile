@@ -1,7 +1,7 @@
 pipeline{
     agent {
         docker{
-            image 'jacoblincool/playwright:all'
+            image 'mcr.microsoft.com/playwright:v1.50.0-noble'
         }
     }   
     stages{
