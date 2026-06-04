@@ -1,9 +1,23 @@
 pipeline{
-    agent any
+    agent {
+        docker{
+            image:'jacoblincool/playwright:latest'
+        }
+    }   
     stages{
-        stage("hello"){
+        stage("Vérification playwright"){
             steps{
-                echo"hello"
+                sh'npx playwright --version'
+            }
+        }
+        stage("installation dépendances"){
+            steps{
+                sh'npm install'
+            }
+        }
+        stage("Lancement du test"){
+            steps{
+                sh'npx playwright test'
             }
         }
     }
