@@ -1,7 +1,7 @@
 pipeline{
     agent {
-        docker{
-            image:'jacoblincool/playwright:latest'
+        Docker{
+            image 'jacoblincool/playwright:latest'
         }
     }   
     stages{
