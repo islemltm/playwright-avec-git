@@ -7,11 +7,11 @@ pipeline{
     parameters{
             booleanParam(name: 'checkBrowser', defaultValue: true, description: 'Voulez-vous executer sur les 3 navigateurs')
 
-            choice(name: 'Browser', choices: ['Chromium', 'firefox', 'webkit'], description: 'Pick a browser')
+            choice(name: 'Browser', choices: ['Chromium', 'firefox', 'webkit'], defaultValue:'chromiem', description: 'Pick a browser')
 
             booleanParam(name: 'Checktags', defaultValue: true, description: 'Toggle this value')
 
-            choice(name: 'tags', choices: ['@regression', '@smoke', '@invalide','@integration','@test'], description: 'Pick a tag')
+            choice(name: 'tags', choices: ['@regression', '@smoke', '@invalide','@integration','@test'], defaultValue:'@smoke', description: 'Pick a tag')
     }
     stages{
         
@@ -44,16 +44,6 @@ pipeline{
                     }
                     
                 }
-                build job:'JenkinsGitJob',
-                    parameters: [
-                        booleanParam(name: 'checkBrowser', value:true)
-
-                        choice(name: 'Browser', value: 'webkit')
-
-                        booleanParam(name: 'Checktags', value: true)
-
-                        choice(name: 'tags', value: '@regression')
-                    ]
             }
         }
     }
