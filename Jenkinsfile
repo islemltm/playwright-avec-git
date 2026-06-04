@@ -5,8 +5,10 @@ pipeline{
         }
     }   
     stages{
+        
         stage("installation dépendances"){
             steps{
+                sh'node --version'
                 sh'npm install'
             }
         }
